@@ -54,8 +54,8 @@ As we will be using the AD9833 modules which only receive data and will not send
 So, for the regular AD9833 module we’ll get the following connection table
 
 Raspberry Pi|AD9833 Module
-PIN|GPIO|Description|PIN|Remarks
 ---|---|---|---
+PIN|GPIO|Description|PIN|Remarks
 19|GPIO10|SPI_MOSI|DAT|MOSI = Data = Receive data from Master
 23|GPIO11|SPI_CLK|CLK|Clock
 24|GPIO08|SPI_CE0_N|FNC|FNC = Chip select = FSYNC0 = SSO = Device 0

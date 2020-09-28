@@ -55,17 +55,18 @@ So, for the regular AD9833 module we’ll get the following connection table
 
 <table>
 	<thead>
-		<th>col 1</th>
-		<th>col 2</th>
-		<th>col 2</th>
-		<th>col 2</th>
+		<th>PIN</th>
+		<th>GPIO</th>
+		<th>Description</th>
+		<th>PIN</th>
+		<th>Remarks</th>
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan=2>Col span </td><td colspan=2> Cel 2</td>
+			<td colspan=3>Raspberry Pi</td><td colspan=2>AD9833 Module</td>
 		</tr>
 		<tr>
-			<td>Cel 3 </td><td> Cel 4</td><td> Cel 2</td><td> Cel 2</td>
+			<td>19</td><td>GPIO10</td><td>SPI_MOSI</td><td>DAT</td><td>MOSI = Data = Receive data from Master</td>
 		</tr>
 	</tbody>
 

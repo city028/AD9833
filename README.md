@@ -16,7 +16,7 @@ The Module on the right expands upon this design by introducing and amplifier to
 
 AD9833 Module|AD9833 with Amplification Module
 ---------------------|---------------------
-<img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_2763.jpeg" width="100"> | <img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_2763.jpeg" width="100">
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_2763.jpeg" width="200"> | <img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_2760.jpeg" width="200">
 Schematic pi|Schematic Pic
  	 
 

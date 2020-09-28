@@ -53,6 +53,22 @@ As we will be using the AD9833 modules which only receive data and will not send
 
 So, for the regular AD9833 module we’ll get the following connection table
 
+<table>
+	<thead>
+		<th>col 1</th>
+		<th>col 2</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cel 1 </td><td> Cel 2</td>
+		</tr>
+		<tr>
+			<td>Cel 3 </td><td> Cel 4</td>
+		</tr>
+	</tbody>
+
+</table>	
+
 Raspberry Pi|AD9833 Module
 ---|---|---|---
 PIN|GPIO|Description|PIN|Remarks

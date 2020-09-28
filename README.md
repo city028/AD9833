@@ -1,14 +1,14 @@
-#Using the AD9833 with a Raspberry Pi
+# Using the AD9833 with a Raspberry Pi
 
 <sorry for the mess, I am learning how formatting works>
 
-Introduction
+## Introduction
 
 In this project I will be using an AD9833 module you can buy e.g. at Amazon or eBay and use it with Python(3) on a Raspberry Pi. In my research I found a lot of references about using these modules with an Arduino but the examples for using these modules with a Raspberry Pi did not work for me so I did my own research and came-up with something which works for me and I hope for you to.
 
 In the chapters below I’ll discuss the hardware, how to hook the modules up to the Raspberry Pi and I’ll discuss in the software section how to programme the modules using Python. 
 
-Hardware
+## Hardware
 
 The AD9833 module below on the left, as you can see from the schematic below it just holds the AD9833 chip, a crystal for the clock and some R’s and C’s to make it all work.
 
@@ -19,13 +19,13 @@ AD9833 Module	AD9833 with Amplification Module
  	 
 
 
-Raspberry Pi Header Pin-out
+## Raspberry Pi Header Pin-out
 
 Let us first take a look at the raspberry Pi GPIO Header Pin-out below from element14.com
 
  
 
-SPI Bus
+## SPI Bus
 
 The Raspberry Pi is provided with an SPI bus which can be used for a serial connection between the Raspberry Pi and other devices.
 

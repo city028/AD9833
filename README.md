@@ -76,15 +76,15 @@ SS1 = Device 1
 06	GND	Ground	GND	Ground
 <Test this out>
 
-AD9833 Module wire diagram
+## AD9833 Module wire diagram
 
 <Insert Fritzing diagrams>
 
-AD9833 Amplification Module wire diagram
+## AD9833 Amplification Module wire diagram
 
 <Insert Fritzing diagrams>
 
-Software Installation
+## Software Installation
 
 Now that we have hooked up the hardware we can have a look at the software to make things work.
 
@@ -139,7 +139,7 @@ Ok, everything we need is now enabled and installed so let’s start programming
 
 Well, hold on, first some background on how the AD9833 works….
 
-Programming the AD9833
+# Programming the AD9833
 
 This part took me quite a while before I figured it out as the examples I found on the Internet did not work for me for some reason.
 
@@ -147,7 +147,7 @@ As mentioned above the AD9833 uses a SPI bus (serial) to communicate with the ma
 
 Link #1 in the table below in this document, the datasheet of the AD9833 can be downloaded which gives us a lot of information.
 
-The AD9833 Control register
+## The AD9833 Control register
 
 The control register is used to “programme” the AD9833 the way we would like it, so from the raspberry Pi we send a number of commands and the chip starts outputting the signal and the Raspberry can do other things (this is the main reason why I chose the AD9833 to offload creating a signal to another device). The AD9833 uses a 16-bit register as a control register, each bit in that register has a purpose (please check-out table 2, page 10 of the datasheet).
 
@@ -201,7 +201,7 @@ D3 = DIV2 = 1 = No MSB/2
 
 Which corresponds to hex: 0x0028
 
-Calculating the frequency word
+## Calculating the frequency word
 
 Ok, brace you selves, here is the math part.
 
@@ -262,7 +262,7 @@ Value	Remarks
 
 Please look in the Source directory on Github to check out the 400hz.py source file which sets a block wave of 400hz (below I will explain the code in more detail).
 
-Higher Frequencies MSB and LSB calculations
+## Higher Frequencies MSB and LSB calculations
 
 Now that we know what values we need for 400Hz lets take a look at a bit higher frequency such as 2300Hz. 
 
@@ -298,7 +298,7 @@ Value	Remarks
 
 Please look in the Source directory on Github to check out the 2300hz.py source file which sets a block wave of 2300hz (below I will explain the code in more detail).
 
-Finally, some programming
+# Finally, some programming
 
 Let’s keep it simple before we let loose our programming skills and focus on what is required to get some output and we’ll use the normal AD9833 module for this example.
 
@@ -388,7 +388,7 @@ If all goes well you would see a 2300hz sinewave on your oscilloscope.
 
 Please check out the Source directory for more examples.
 
-Testing
+# Testing
 
 Although the picture above looks OK one of the big issues I had was testing the output with my cheepo OWON USB oscilloscope, If I were to take a video the signal would be bouncing up and down, I am sure this has nothing to do with the AD9833 but more with my test environment and kit. 
 
@@ -396,11 +396,11 @@ I had the scope on an USB port of a laptop and the Raspberry Pi (and thus the AD
 
 I need to do some further testing with creating a sine wave as this totally messed up the measured signal, the voltage drop seems to be significant when switching from a block wave to a sine wave (using the DAC) hence I bought the ad9833 with amplifier, once I figured that out I’ll update this page and the source code files.
 
-Summary
+# Summary
 
 So, in summary, although some math is required to calculate the frequency word to be programmed in the AD9833 registers (I am sure we can resolve this by a simple procedure which does that for you, I’ll post that into the source directory when I am done) It is pretty straightforward to use the AD9833 with a Raspberry Pi when you figure out which bits of the control register do what and I hope the above description helped.
 
-Up next
+# Up next
 
 •	Create a procedure which does all the math for you to set the frequency
 •	Create a procedure to get a sinewave and sawtooth out of the AD9833 besides the frequency
@@ -408,7 +408,7 @@ Up next
 •	Create a procedure to use the AD9833 with amplifier module
 •	Add the Fritzing diagrams on how everything is hooked up
 
-Links
+# Links
 #	Description	Link
 1	AD9833 Data sheet	https://datasheet.lcsc.com/szlcsc/Analog-Devices-ADI-AD9833BRMZ_C9652.pdf
 

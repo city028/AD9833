@@ -14,8 +14,10 @@ The AD9833 module below on the left, as you can see from the schematic below it 
 
 The Module on the right expands upon this design by introducing and amplifier to the output of the AD9833 with a digital resistor (also programmable via SPI) so that you can change the amplification setting.
 
-AD9833 Module	AD9833 with Amplification Module
- 	 
+AD9833 Module|AD9833 with Amplification Module
+---------------------|---------------------
+Module Pic | Module Pic
+Schematic pi|Schematic Pic
  	 
 
 

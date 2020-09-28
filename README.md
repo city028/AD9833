@@ -411,28 +411,20 @@ So, in summary, although some math is required to calculate the frequency word t
 •	Add the Fritzing diagrams on how everything is hooked up
 
 # Links
-#	Description	Link
-1	AD9833 Data sheet	https://datasheet.lcsc.com/szlcsc/Analog-Devices-ADI-AD9833BRMZ_C9652.pdf
 
-2	Raspberry Pi Header pin out	https://www.element14.com/community/docs/DOC-88824/l/raspberry-pi-3-model-b-gpio-40-pin-block-poe-header-pinout
-
-3	Raspberry Pi OS downloads	https://www.raspberrypi.org/downloads/raspberry-pi-os/
-
-4	Enabling SSH	https://www.raspberrypi-spy.co.uk/2012/05/enable-secure-shell-ssh-on-your-raspberry-pi/
-
-5	Using Ether to flash SD cards for the Raspberry Pi	https://www.balena.io/etcher/
-
-6	Raspberry Pi and the SPI interface	https://raspberrypi-aa.github.io/session3/spi.html
-
-7	Installing Python3	https://projects.raspberrypi.org/en/projects/generic-python-install-python3#linux
-
-8	The SPIDEV website	https://pypi.org/project/spidev/
-
-9	Install PIP	https://www.raspberrypi.org/documentation/linux/software/python.md
-
-10	Binary to hex converter	https://www.rapidtables.com/convert/number/binary-to-hex.html
-
-11	AD9833 application notes	https://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf
+#|Description|Link
+---------|----------|-------------
+1|AD9833 Data sheet|https://datasheet.lcsc.com/szlcsc/Analog-Devices-ADI-AD9833BRMZ_C9652.pdf
+2|Raspberry Pi Header pin out|https://www.element14.com/community/docs/DOC-88824/l/raspberry-pi-3-model-b-gpio-40-pin-block-poe-header-pinout
+3|Raspberry Pi OS downloads|https://www.raspberrypi.org/downloads/raspberry-pi-os/
+4|Enabling SSH|https://www.raspberrypi-spy.co.uk/2012/05/enable-secure-shell-ssh-on-your-raspberry-pi/
+5|Using Ether to flash SD cards for the Raspberry Pi|https://www.balena.io/etcher/
+6|Raspberry Pi and the SPI interface|https://raspberrypi-aa.github.io/session3/spi.html
+7|Installing Python3|https://projects.raspberrypi.org/en/projects/generic-python-install-python3#linux
+8|The SPIDEV website|https://pypi.org/project/spidev/
+9|Install PIP|https://www.raspberrypi.org/documentation/linux/software/python.md
+10|Binary to hex converter|https://www.rapidtables.com/convert/number/binary-to-hex.html
+11|AD9833 application notes|https://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf
 
 
 

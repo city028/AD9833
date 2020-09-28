@@ -63,23 +63,19 @@ So, for the regular AD9833 module we’ll get the following connection table
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan=3>Raspberry Pi</td><td colspan=2>AD9833 Module</td>
+			<td colspan=3><B>Raspberry Pi</td><td colspan=2>AD9833 Module</B></td>
 		</tr>
 		<tr>
-			<td>19</td><td>GPIO10</td><td>SPI_MOSI</td><td>DAT</td><td>MOSI = Data = Receive data from Master</td>
+			<td>19</td><td>GPIO10 </td><td>SPI_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
+			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
+			<td>25</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FNC </td><td>FNC = Chip select = FSYNC0 = SSO = Device 0</td>
+			<td>05</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>
+			<td>06</td><td>GND    </td><td>Ground    </td><td>GND </td><td>Ground</td>
 		</tr>
 	</tbody>
 
 </table>	
 
-Raspberry Pi|AD9833 Module
----|---|---|---
-PIN|GPIO|Description|PIN|Remarks
-19|GPIO10|SPI_MOSI|DAT|MOSI = Data = Receive data from Master
-23|GPIO11|SPI_CLK|CLK|Clock
-24|GPIO08|SPI_CE0_N|FNC|FNC = Chip select = FSYNC0 = SSO = Device 0
-05|+5v|VCC|VCC|VCC
-06|GND|Ground|GND|Ground
 
 Note: The Raspberry PI has two pins which are used for selecting the chip (Chip Select, SS) to where to send the data to or to receive from, these are: 
 

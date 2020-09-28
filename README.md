@@ -35,15 +35,17 @@ The Raspberry Pi is provided with an SPI bus which can be used for a serial conn
 
 The AD9833 modules are using an SPI bus as well to receive data from the SPI master so that they can be configured to create e.g. a sinewave at 1Khz. So, if we identify the SPI pins on the Raspberry Pi header we get the following table:
 
-PIN	GPIO	Description
-19	GPIO10	SPI_MOSI
-21	GPIO09	SPI_MISO
-23	GPIO11	SPI_CLK
-24	GPIO08	SPI_CE0_N
-26	GPIO07	SPI_CE1_N
+PIN|GPIO|Description
+---|---|---
+19|GPIO10|SPI_MOSI
+21|GPIO09|SPI_MISO
+23|GPIO11|SPI_CLK
+24|GPIO08|SPI_CE0_N
+26|GPIO07|SPI_CE1_N
 
 The below diagram explains how the SPI bus needs to be wired up:
 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/SPI.png" width="500">
  
 Assume that in our case the SPI Master is the Raspberry PI and that the AD9833 modules are connected to the Master as depicted for the Slaves.
 

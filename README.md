@@ -404,11 +404,11 @@ So, in summary, although some math is required to calculate the frequency word t
 
 # Up next
 
-•	Create a procedure which does all the math for you to set the frequency
-•	Create a procedure to get a sinewave and sawtooth out of the AD9833 besides the frequency
-•	Test the AD9833 with amplification
-•	Create a procedure to use the AD9833 with amplifier module
-•	Add the Fritzing diagrams on how everything is hooked up
+* Create a procedure which does all the math for you to set the frequency
+* Create a procedure to get a sinewave and sawtooth out of the AD9833 besides the frequency
+* Test the AD9833 with amplification
+* Create a procedure to use the AD9833 with amplifier module
+* Add the Fritzing diagrams on how everything is hooked up
 
 # Links
 

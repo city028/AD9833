@@ -63,7 +63,7 @@ So, for the regular AD9833 module we’ll get the following connection table
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan=3><B>Raspberry Pi</td><td colspan=2>AD9833 Module</B></td>
+			<td colspan=3><B>Raspberry Pi</B></td><td colspan=2><B>AD9833 Module</B></td>
 		</tr>
 		<tr>
 			<td>19</td><td>GPIO10 </td><td>SPI_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>

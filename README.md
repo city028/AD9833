@@ -67,9 +67,17 @@ So, for the regular AD9833 module we’ll get the following connection table
 		</tr>
 		<tr>
 			<td>19</td><td>GPIO10 </td><td>SPI_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
+		</tr>
+		<tr>
 			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
+		</tr>
+		<tr>
 			<td>25</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FNC </td><td>FNC = Chip select = FSYNC0 = SSO = Device 0</td>
+		</tr>
+		<tr>
 			<td>05</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>
+		</tr>
+		<tr>
 			<td>06</td><td>GND    </td><td>Ground    </td><td>GND </td><td>Ground</td>
 		</tr>
 	</tbody>

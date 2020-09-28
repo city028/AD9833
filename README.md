@@ -14,11 +14,12 @@ The AD9833 module below on the left, as you can see from the schematic below it 
 
 The Module on the right expands upon this design by introducing and amplifier to the output of the AD9833 with a digital resistor (also programmable via SPI) so that you can change the amplification setting.
 
+<center>
 AD9833 Module|AD9833 with Amplification Module
 ---------------------|---------------------
 <img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_2763.jpeg" width="200"> | <img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_2760.jpeg" width="200">
-Schematic pi|Schematic Pic
- 	 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_0416.jpeg" width="200">|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/IMG_0414.jpeg" width="200">
+</center> 	 
 
 
 ## Raspberry Pi Header Pin-out

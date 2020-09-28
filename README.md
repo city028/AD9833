@@ -53,19 +53,21 @@ As we will be using the AD9833 modules which only receive data and will not send
 
 So, for the regular AD9833 module we’ll get the following connection table
 
-Raspberry Pi	AD9833 Module
-PIN	GPIO	Description	PIN	Remarks
-19	GPIO10	SPI_MOSI	DAT	MOSI = Data = Receive data from Master
-23	GPIO11	SPI_CLK	CLK	Clock
-24	GPIO08	SPI_CE0_N 	FNC	FNC = Chip select = FSYNC0 = SSO = Device 0
-05	+5v	VCC	VCC	VCC
-06	GND	Ground	GND	Ground
+Raspberry Pi|AD9833 Module
+PIN|GPIO|Description|PIN|Remarks
+---|---|---|---
+19|GPIO10|SPI_MOSI|DAT|MOSI = Data = Receive data from Master
+23|GPIO11|SPI_CLK|CLK|Clock
+24|GPIO08|SPI_CE0_N|FNC|FNC = Chip select = FSYNC0 = SSO = Device 0
+05|+5v|VCC|VCC|VCC
+06|GND|Ground|GND|Ground
 
 Note: The Raspberry PI has two pins which are used for selecting the chip (Chip Select, SS) to where to send the data to or to receive from, these are: 
 
-PIN	GPIO	Description
-24	GPIO08	SPI_CE0_N 
-26	GPIO07	SPI_CE1_N 
+PIN|GPIO|Description
+---|---|---
+24|GPIO08|SPI_CE0_N 
+26|GPIO07|SPI_CE1_N 
 
 So, with the Raspberry Pi we can drive 2 different SPI slaves using the same SPI bus (e.g. Slave 1 and slave 2 above)
 

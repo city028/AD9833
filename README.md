@@ -55,15 +55,16 @@ So, for the regular AD9833 module we’ll get the following connection table
 
 <table>
 	<thead>
-		<th>col 1</th>
-		<th>col 2</th>
+		<th colspan=2>col 1</th>
+		<th colspan=2>col 2</th>
+
 	</thead>
 	<tbody>
 		<tr>
-			<td>Cel 1 </td><td> Cel 2</td>
+			<td>Cel 1 </td><td> Cel 2</td><td> Cel 2</td><td> Cel 2</td>
 		</tr>
 		<tr>
-			<td>Cel 3 </td><td> Cel 4</td>
+			<td>Cel 3 </td><td> Cel 4</td><td> Cel 2</td><td> Cel 2</td>
 		</tr>
 	</tbody>
 

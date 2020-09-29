@@ -370,19 +370,22 @@ So, with the command above we’ll select Bus 0 and Device 0
 
 The command above sets the clock speed which is used between the Raspberry PI and the SPI slave devices, I have not played with this, please let me know your thoughts.
 
-```def send_data(input):
+The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB.
+
+```
+def send_data(input):
     tx_msb=input>>8
     tx_lsb=input & 0xFF
     spi.xfer([tx_msb,tx_lsb])
-    print(input)```
-
-The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB.
+    print(input)
+```
 
 After this the spidev procedure “spi.xfer()” is used to send the two bytes, MSB first followed by LSB) and finally the input is printed so that you at least see some output on your screen.
 
 Now we can start sending some information to the FREQ0 registers
 
-```send_data(0x0100) # Send a reset
+```
+send_data(0x0100) # Send a reset
 
 send_data(0x1000) # Select the MSB Register
 send_data(0x4001) # Write MSB = 0x0001 to FREQ0
@@ -390,11 +393,14 @@ send_data(0x4001) # Write MSB = 0x0001 to FREQ0
 send_data(0x0000) # Select the LSB Register
 send_data(0x60f0)  # Write LSB = 0x20F0 to FREQ0
 
-send_data(0x0028) # Blockwave output```
+send_data(0x0028) # Blockwave output
+```
 
 
 Bringing it together we get:
-```import spidev
+
+```
+import spidev
 spi=spidev.SpiDev()
 spi.open(0,0)
 spi.max_speed_hz=500000
@@ -413,7 +419,8 @@ send_data(0x4001) # Write MSB = 0x0001 to FREQ0
 send_data(0x0000) # Select the LSB Register
 send_data(0x60f0)  # Write LSB = 0x20F0 to FREQ0
 
-send_data(0x0028) # Blockwave output```
+send_data(0x0028) # Blockwave output
+```
 
 
 Now, let execute this code

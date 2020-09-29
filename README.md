@@ -72,7 +72,7 @@ So, for the regular AD9833 module we’ll get the following connection table
 			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
 		</tr>
 		<tr>
-			<td>25</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FNC </td><td>FNC = Chip select = FSYNC0 = SSO = Device 0</td>
+			<td>24</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FNC </td><td>FNC = Chip select = FSYNC0 = SSO = Device 0</td>
 		</tr>
 		<tr>
 			<td>05</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>
@@ -115,10 +115,10 @@ For the AD9833 module with amplification we get to the following connection tabl
 			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
 		</tr>
 		<tr>
-			<td>25</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FSY </td><td>FSY = Chip select = AD9833</td>
+			<td>24</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FSY </td><td>FSY = Chip select = AD9833</td>
 		</tr>
 				<tr>
-			<td>25</td><td>GPIO07 </td><td>SPI_CE1_N </td><td>CS </td><td>CS = Chip select = MCP41010 digital resistor</td>
+			<td>26</td><td>GPIO07 </td><td>SPI_CE1_N </td><td>CS </td><td>CS = Chip select = MCP41010 digital resistor</td>
 		</tr>
 		<tr>
 			<td>05</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>

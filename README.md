@@ -96,16 +96,40 @@ So, with the Raspberry Pi we can drive 2 different SPI slaves using the same SPI
 
 For the AD9833 module with amplification we get to the following connection table:
 
-Raspberry Pi	AD9833 with Amplification Module
-PIN	GPIO	Description	PIN	Remarks
-19	GPIO10	SPI_MOSI	DAT	MOSI = Data = Receive data from Master
-23	GPIO11	SPI_CLK	CLK	Clock
-24	GPIO08	SPI_CE0_N 	FSY	FNC = Chip select = FSYNC0 = SSO = Device 0
-26	GPIO07	SPI_CE1_N 	CS	Used to programme the digital resistor
-SS1 = Device 1
-05	+5v	VCC	VCC	VCC
-06	GND	Ground	GND	Ground
-<Test this out>
+<table>
+	<thead>
+		<th>PIN</th>
+		<th>GPIO</th>
+		<th>Description</th>
+		<th>PIN</th>
+		<th>Remarks</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan=3><B>Raspberry Pi</B></td><td colspan=2><B>AD9833 Module with Amplification</B></td>
+		</tr>
+		<tr>
+			<td>19</td><td>GPIO10 </td><td>SPI_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
+		</tr>
+		<tr>
+			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
+		</tr>
+		<tr>
+			<td>25</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FSY </td><td>FSY = Chip select = AD9833</td>
+		</tr>
+				<tr>
+			<td>25</td><td>GPIO07 </td><td>SPI_CE1_N </td><td>CS </td><td>CS = Chip select = MCP41010 digital resistor</td>
+		</tr>
+		<tr>
+			<td>05</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>
+		</tr>
+		<tr>
+			<td>06</td><td>GND    </td><td>Ground    </td><td>GND </td><td>Ground</td>
+		</tr>
+	</tbody>
+
+</table>
+
 
 ## AD9833 Module wire diagram
 

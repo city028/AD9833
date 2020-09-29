@@ -94,7 +94,7 @@ PIN|GPIO|Description
 
 So, with the Raspberry Pi we can drive 2 different SPI slaves using the same SPI bus (e.g. Slave 1 and slave 2 above)
 
-For the AD9833 module with amplification we get to the following connection table:
+For the AD9833 module with amplification we get to the following connection table(Note: this is currently being tested):
 
 <table>
 	<thead>

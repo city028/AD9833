@@ -1,7 +1,5 @@
 # Using the AD9833 with a Raspberry Pi
 
-<sorry for the mess, I am learning how formatting works, work in progress>
-
 ## Introduction
 
 In this project I will be using an AD9833 module you can buy e.g. at Amazon or eBay and use it with Python(3) on a Raspberry Pi. In my research I found a lot of references about using these modules with an Arduino but the examples for using these modules with a Raspberry Pi did not work for me so I did my own research and came-up with something which works for me and I hope for you to.
@@ -174,7 +172,7 @@ Ok, everything we need is now enabled and installed so let’s start programming
 
 Well, hold on, first some background on how the AD9833 works….
 
-# Programming the AD9833
+## Programming the AD9833
 
 This part took me quite a while before I figured it out as the examples I found on the Internet did not work for me for some reason.
 
@@ -182,7 +180,7 @@ As mentioned above the AD9833 uses a SPI bus (serial) to communicate with the ma
 
 Link #1 in the table below in this document, the datasheet of the AD9833 can be downloaded which gives us a lot of information.
 
-## The AD9833 Control register
+### The AD9833 Control register
 
 The control register is used to “programme” the AD9833 the way we would like it, so from the raspberry Pi we send a number of commands and the chip starts outputting the signal and the Raspberry can do other things (this is the main reason why I chose the AD9833 to offload creating a signal to another device). The AD9833 uses a 16-bit register as a control register, each bit in that register has a purpose (please check-out table 2, page 10 of the datasheet).
 
@@ -237,7 +235,7 @@ D3 = DIV2 = 1 = No MSB/2
 
 Which corresponds to hex: 0x0028
 
-## Calculating the frequency word
+### Calculating the frequency word
 
 Ok, brace you selves, here is the math part.
 
@@ -427,7 +425,7 @@ Now, let execute this code
 
 `$ python3 2300hz.py`
 
-If all goes well you would see a 2300hz sinewave on your oscilloscope.
+If all goes well you would see a 2300hz blockwave on your oscilloscope.
 
 <img src="https://github.com/city028/AD9833/blob/master/Source/pics/scope1.png" width="500">  
 

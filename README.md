@@ -239,7 +239,7 @@ Which corresponds to hex: 0x0028
 
 Based upon table 11 in the datasheet we can deduct the flowing values to get either a sine, block or sawtooth signal.
 
-<img src="https://github.com/city028/AD9833/blob/master/Source/pics/wavetype.png" width="500"> 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/wavetype.png" width="800"> 
 
 Please find some source code examples in the source directory.
 

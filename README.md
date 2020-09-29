@@ -159,7 +159,7 @@ After this is done (can take a couple<BR> of minutes) we need to enable<BR> the 
 Select P4 SPI and hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig 2.png" width="350">
 Use Tab to select <Yes> and hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig 3.png" width="350"> 
 The PSI interface is now enabled, hit OK|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig 4.png" width="350">	 
-Use Tab to select: Finish<BR>and exit raspi-config||<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig5.png" width="350">	 
+Use Tab to select: Finish<BR>and exit raspi-config|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig5.png" width="350">	 
 
 Now that the Raspberry Pi has been “Updated” and “Upgraded” and the SPI interface is now enabled we can focus on installing Python3, PIP3 and SPIDEV (the library I use to use the SPI interface in Python).
 

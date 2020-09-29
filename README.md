@@ -133,11 +133,11 @@ For the AD9833 module with amplification we get to the following connection tabl
 
 ## AD9833 Module wire diagram
 
-<Insert Fritzing diagrams>
+Coming Soon!
 
 ## AD9833 Amplification Module wire diagram
 
-<Insert Fritzing diagrams>
+Comming Soon!
 
 ## Software Installation
 
@@ -151,18 +151,11 @@ Note: for security reasons you should change the default password
 
 The below table shows a step by step approach to install the required software
 
-Commands	Output
-Update the OS with:
-
-$sudo apt update	 
-$sudo apt upgrade
-
-Type: Y	 
-After this is done (can take a couple of minutes) we need to enable the SPI interface on the Raspberry, to do this we type in the following command:
-
-$sudo raspi-config
-
-Select: 5 (use arrow keys). Interfacing options” hit enter
+Commands|Output
+---|---
+Update the OS with:$sudo apt update|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/aptupdate.png" width="250">	 
+$sudo apt upgrade <BR>Type: Y|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/aptupgrade.png" width="250">	
+After this is done (can take a couple of minutes) we need to enable the SPI interface on the Raspberry, to do this we type in the following command:$sudo raspi-config Select: 5 (use arrow keys). Interfacing options” hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig.png" width="250">	
 	 
 Select P4 SPI and hit enter
 

@@ -370,7 +370,7 @@ So, with the command above we’ll select Bus 0 and Device 0
 
 The command above sets the clock speed which is used between the Raspberry PI and the SPI slave devices, I have not played with this, please let me know your thoughts.
 
-The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB.
+The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB. After this the spidev procedure “spi.xfer()” is used to send the two bytes, MSB first followed by LSB) and finally the input is printed so that you at least see some output on your screen.
 
 ```
 def send_data(input):
@@ -380,7 +380,7 @@ def send_data(input):
     print(input)
 ```
 
-After this the spidev procedure “spi.xfer()” is used to send the two bytes, MSB first followed by LSB) and finally the input is printed so that you at least see some output on your screen.
+
 
 Now we can start sending some information to the FREQ0 registers
 
@@ -429,7 +429,7 @@ Now, let execute this code
 
 If all goes well you would see a 2300hz sinewave on your oscilloscope.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/scope1.png" width="500">  
 
 Please check out the Source directory for more examples.
 

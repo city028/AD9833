@@ -361,7 +361,7 @@ The syntax for the command is:
 We only have one bus on the Raspberry, so BUS = 0
 
 We can connect two devices:<BR>
-Device = 0 = SPI_CE0_N = PIN 24 = GPIO08<BR
+Device = 0 = SPI_CE0_N = PIN 24 = GPIO08<BR>
 Device = 1 = SPI_CE1_N = PIN 26 = GPIO07<BR>
 
 So, with the command above we’ll select Bus 0 and Device 0

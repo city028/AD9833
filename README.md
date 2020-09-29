@@ -1,6 +1,6 @@
 # Using the AD9833 with a Raspberry Pi
 
-<sorry for the mess, I am learning how formatting works>
+<sorry for the mess, I am learning how formatting works, work in progress>
 
 ## Introduction
 
@@ -163,22 +163,12 @@ Use Tab to select: Finish<BR>and exit raspi-config|<img src="https://github.com/
 
 Now that the Raspberry Pi has been “Updated” and “Upgraded” and the SPI interface is now enabled we can focus on installing Python3, PIP3 and SPIDEV (the library I use to use the SPI interface in Python).
 
-Command	Output
-$sudo apt install python3 idle3
-
-Type: Y and enter	 
-When done we need to install PIP3 with the following command
-
-$sudo apt install python3-pip
-
-Hit: Y and Enter
-
-PIP3 is required to install SPIDEV, you probably get some warnings on Locale but they can be ignored	 
-
- 
-Now install SPIDEV using PIP3
-
-$ sudo pip3 install spidev	 
+Commands|Output
+---|---
+$sudo apt install python3 idle3<BR>Type: Y and enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python1.png" width="350">	
+When done we need to install<BR>PIP3 with the following command<BR><BR>$sudo apt install python3-pip<BR><BR>Hit: Y and Enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python2.png" width="350">	
+PIP3 is required to install<BR>SPIDEV, you probably get some warnings<BR>on Locale but they can be ignored||<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python3.png" width="350">		 
+Now install SPIDEV using PIP3<BR><BR>$ sudo pip3 install spidev|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python4.png" width="350">		 
 
 Ok, everything we need is now enabled and installed so let’s start programming!
 

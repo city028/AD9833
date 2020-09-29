@@ -315,7 +315,7 @@ We now have a challenge, bit D14 is set in this value so we need to do something
 
 So yeah, we are back at 0x6189 but we know now that D15 = 0 and D14 =1 which selects FREQ0.
 
-<u>After some tinkering with the values I got to a LSB value of 0x60f0</u>
+<ins>After some tinkering with the values I got to a LSB value of 0x60f0</ins>
 
 Now we need to do something with the MSB by moving bits to the right 14x, AND to make sure D15 and D14 are not set and then OR by 0x4000 to set bits D15,D14 correctly for FREQ0.
 
@@ -342,7 +342,7 @@ Let’s keep it simple before we let loose our programming skills and focus on w
 
 First off create a file e.g. 2300hz.py and add the following
 
-import spidev
+`<addr>`import spidev
 
 This will import the spidev library we installed earlier above, now lets create the SPI object
 

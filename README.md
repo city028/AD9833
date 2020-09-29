@@ -47,6 +47,8 @@ The below diagram explains how the SPI bus needs to be wired up:
  
 Assume that in our case the SPI Master is the Raspberry PI and that the AD9833 modules are connected to the Master as depicted for the Slaves.
 
+What you see is that all MISO pins are connected to eachother, same for the CLK and MOSI pins, this is a bus configuration, so what about addressing the chips? To solve this issue they have added SS = Chip Select, you can see that SS1 connects to slave 1 and that SS2 connects to SS2 etc. So If the master want to communicate to chip 1 it selects SS1 and then starts writing or asking for data. 
+
 As we will be using the AD9833 modules which only receive data and will not send data back to the master, the MISO connectivity between Master and slaves can be omitted. If you however are working with an AD converter you will need the MISO link to read the data from your ADC.
 
 So, for the regular AD9833 module we’ll get the following connection table

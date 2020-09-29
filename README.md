@@ -259,7 +259,7 @@ Ok, now you know, I still don’t, but it does not matter for what we are doing.
 
 The outcome of the above calculation for a required 400hz signal is: 0x10C7 (I noticed this is not exact, you might need to tweak this value to get closer to the desired output)
 
-<u>After tinkering with the values and watching it on my scope I got to a value of: 0x1100 so slightly higher than the calculation (maybe the AD9833 is not accurate or my scope…probably the latter).</u>
+<ins>After tinkering with the values and watching it on my scope I got to a value of: 0x1100 so slightly higher than the calculation (maybe the AD9833 is not accurate or my scope…probably the latter).</ins>
 
 <img src="https://github.com/city028/AD9833/blob/master/Source/pics/control7.png" width="500">  
 

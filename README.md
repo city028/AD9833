@@ -167,7 +167,7 @@ Commands|Output
 ---|---
 $sudo apt install python3 idle3<BR>Type: Y and enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python1.png" width="350">	
 When done we need to install<BR>PIP3 with the following command<BR><BR>$sudo apt install python3-pip<BR><BR>Hit: Y and Enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python2.png" width="350">	
-PIP3 is required to install<BR>SPIDEV, you probably get some warnings<BR>on Locale but they can be ignored||<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python3.png" width="350">		 
+PIP3 is required to install<BR>SPIDEV, you probably get some warnings<BR>on Locale but they can be ignored|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python3.png" width="350">		 
 Now install SPIDEV using PIP3<BR><BR>$ sudo pip3 install spidev|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/python4.png" width="350">		 
 
 Ok, everything we need is now enabled and installed so let’s start programming!
@@ -188,7 +188,7 @@ The control register is used to “programme” the AD9833 the way we would like
 
 The way I got this to work is to first write a command to the AD9833 to execute a reset (Bit D8). This means that Bit D8 should be set to 1.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control1.png" width="500"> 
 
 This corresponds to the Hex value of: 0x0100
 
@@ -202,24 +202,25 @@ The FREQ0 register is 28 bits and has 2 registers, one for the Most Significant 
 
 We will first write to the MSB by sending a word with bit D12 set
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control2.png" width="500"> 
 
 This corresponds to Hex: 0x1000
 
 The command is followed by the value we want to set plus ensuring that we write it in the proper FREQ register, as we are using FREQ0 we need to ensure that D15 and D14 are set to 01.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control3.png" width="500">  
 
 I will get back to the MSB value as there is some Math involved….
 
 Now that we have set the MSB we can set the LSB, for this D12 needs to be 0 so we’ll write all zeros to the register.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control4.png" width="500"> 
 
 Which is hex :0x0000
 
 Now we write the LSB to FREQ0:
 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control5.png" width="500"> 
  
 
 We will close off by setting the signal to a square wave (will get back on that later).
@@ -232,7 +233,7 @@ The next thing I stumbled on was my output frequency was 2 x what I thought it w
 
 D3 = DIV2 = 1 = No MSB/2
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control6.png" width="500"> 
 
 Which corresponds to hex: 0x0028
 
@@ -242,13 +243,13 @@ Ok, brace you selves, here is the math part.
 
 We need to calculate a frequency word (28 bits) which we need to write to the MSB and LSB registers using the below formula:
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/formula1.png" width="200"> 
  
 The information can be found in the application notes which can be find in link #11 in the table below.
 
 Here is an example for creating a 400Hz frequency:
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/formula2.png" width="200">  
 
 The 25Mhz (F mclk) is the frequency of the crystal providing the clock to the AD9833. F out is the frequency we want to get out of the AD9833, in this case 400Hz and lastly the 2^28 is above my paygrade but what it states in the documentation is: 
 
@@ -258,9 +259,9 @@ Ok, now you know, I still don’t, but it does not matter for what we are doing.
 
 The outcome of the above calculation for a required 400hz signal is: 0x10C7 (I noticed this is not exact, you might need to tweak this value to get closer to the desired output)
 
-After tinkering with the values and watching it on my scope I got to a value of: 0x1100 so slightly higher than the calculation (maybe the AD9833 is not accurate or my scope…probably the latter).
+<u>After tinkering with the values and watching it on my scope I got to a value of: 0x1100 so slightly higher than the calculation (maybe the AD9833 is not accurate or my scope…probably the latter).</u>
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control7.png" width="500">  
 
 Now that we have this value we can make the MSB and LSB.
 
@@ -272,28 +273,29 @@ Let’s first finish up the 400Hz calculation (using 0x1100) and then we’ll lo
 
 First of all, we’ll do a logical AND with 0x3ff where bits D00 – D13 are set to 1, above this they are 0 so this would give is the LSB 14 bits.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control8.png" width="500">  
 
 Now let’s set D15=0 and D14=1 to select FREQ0 
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control9.png" width="500">  
 
 So our LSB = 0x5100 when writing it to FREQ0.
 
 In the case of 400Hz we have no bits set higher than D12 so the MSB would be 0x00 but we need to set D15=0 and D14 =1.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control10.png" width="500">  
 
 
 Based upon the previous information we now know what values to write to the AD9833 for 400Hz.
 
-Value	Remarks
-0x0100	Send a reset to the AD9833 
-0x1000	Select the MSB Register
-0x4000	Write 0x0000 to FREQ0
-0x0000	Select the LSB Register
-0x5100	Write 0x1100 to FREQ0
-0x0028	Select Block wave and ensure we don’t use DIV/2
+Value|Remarks
+---|---
+0x0100|Send a reset to the AD9833 
+0x1000|Select the MSB Register
+0x4000|Write 0x0000 to FREQ0
+0x0000|Select the LSB Register
+0x5100|Write 0x1100 to FREQ0
+0x0028|Select Block wave and ensure we don’t use DIV/2
 
 Please look in the Source directory on Github to check out the 400hz.py source file which sets a block wave of 400hz (below I will explain the code in more detail).
 
@@ -305,31 +307,32 @@ Using the same calculation as mentioned above I came to the follow frequency wor
 
 0x6189 = 0110 0001 1000 1001  
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control11.png" width="500">  
 
 We now have a challenge, bit D14 is set in this value so we need to do something to determine the MSB but first but first let’s determine the LSB
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control12.png" width="500">  
 
 So yeah, we are back at 0x6189 but we know now that D15 = 0 and D14 =1 which selects FREQ0.
 
-After some tinkering with the values I got to a LSB value of 0x60f0
+<u>After some tinkering with the values I got to a LSB value of 0x60f0</u>
 
 Now we need to do something with the MSB by moving bits to the right 14x, AND to make sure D15 and D14 are not set and then OR by 0x4000 to set bits D15,D14 correctly for FREQ0.
 
- 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/control13.png" width="500">  
 
 So, when the dust settles…the MSB is 0x4001.
 
 Based upon the previous information we now know what values to write to the AD9833 for 2300hz.
 
-Value	Remarks
-0x0100	Send a reset to the AD9833 
-0x1000	Select the MSB Register
-0x4001	Write MSB = 0x0001 to FREQ0
-0x0000	Select the LSB Register
-0x6189	Write LSB = 0x20F0 to FREQ0
-0x0028	Select Block wave and ensure we don’t use DIV/2
+Value|Remarks
+---|---
+0x0100|Send a reset to the AD9833 
+0x1000|Select the MSB Register
+0x4001|Write MSB = 0x0001 to FREQ0
+0x0000|Select the LSB Register
+0x6189|Write LSB = 0x20F0 to FREQ0
+0x0028|Select Block wave and ensure we don’t use DIV/2
 
 Please look in the Source directory on Github to check out the 2300hz.py source file which sets a block wave of 2300hz (below I will explain the code in more detail).
 

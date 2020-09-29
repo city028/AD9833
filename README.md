@@ -342,21 +342,21 @@ Let’s keep it simple before we let loose our programming skills and focus on w
 
 First off create a file e.g. 2300hz.py and add the following
 
-`<addr>`import spidev
+`import spidev`
 
 This will import the spidev library we installed earlier above, now lets create the SPI object
 
-spi=spidev.SpiDev()
+`spi=spidev.SpiDev()`
 
 And open up communications
 
-spi.open(0,0)
+`spi.open(0,0)`
 
 SPIDEV supports 2 SPI busses and each with 2 devices (as far as I know)
 
 The syntax for the command is:
 
-spi.open(bus,device)
+`spi.open(bus,device)`
 
 We only have one bus on the Raspberry, so BUS = 0
 
@@ -366,15 +366,15 @@ Device = 1 = SPI_CE1_N = PIN 26 = GPIO07
 
 So, with the command above we’ll select Bus 0 and Device 0
 
-spi.max_speed_hz=500000
+`spi.max_speed_hz=500000`
 
 The command above sets the clock speed which is used between the Raspberry PI and the SPI slave devices, I have not played with this, please let me know your thoughts.
 
-def send_data(input):
+`def send_data(input):
     tx_msb=input>>8
     tx_lsb=input & 0xFF
     spi.xfer([tx_msb,tx_lsb])
-    print(input)
+    print(input)`
 
 The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB.
 
@@ -382,7 +382,7 @@ After this the spidev procedure “spi.xfer()” is used to send the two bytes, 
 
 Now we can start sending some information to the FREQ0 registers
 
-send_data(0x0100) # Send a reset
+`send_data(0x0100) # Send a reset
 
 send_data(0x1000) # Select the MSB Register
 send_data(0x4001) # Write MSB = 0x0001 to FREQ0
@@ -390,11 +390,11 @@ send_data(0x4001) # Write MSB = 0x0001 to FREQ0
 send_data(0x0000) # Select the LSB Register
 send_data(0x60f0)  # Write LSB = 0x20F0 to FREQ0
 
-send_data(0x0028) # Blockwave output
+send_data(0x0028) # Blockwave output`
 
 
 Bringing it together we get:
-import spidev
+`import spidev
 spi=spidev.SpiDev()
 spi.open(0,0)
 spi.max_speed_hz=500000
@@ -413,12 +413,12 @@ send_data(0x4001) # Write MSB = 0x0001 to FREQ0
 send_data(0x0000) # Select the LSB Register
 send_data(0x60f0)  # Write LSB = 0x20F0 to FREQ0
 
-send_data(0x0028) # Blockwave output
+send_data(0x0028) # Blockwave output`
 
 
 Now, let execute this code
 
-$ python3 2300hz.py
+`$ python3 2300hz.py`
 
 If all goes well you would see a 2300hz sinewave on your oscilloscope.
 

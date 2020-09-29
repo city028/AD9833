@@ -239,7 +239,7 @@ Which corresponds to hex: 0x0028
 
 ### Calculating the frequency word
 
-Ok, brace you selves, here is the math part.
+Ok, brace yourselves, here is the math part.
 
 We need to calculate a frequency word (28 bits) which we need to write to the MSB and LSB registers using the below formula:
 

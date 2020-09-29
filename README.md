@@ -155,13 +155,10 @@ Commands|Output
 ---|---
 Update the OS with:<BR>$sudo apt update|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/aptupdate.png" width="250">	 
 $sudo apt upgrade <BR>Type: Y|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/aptupgrade.png" width="250">	
-After this is done (can take a couple of minutes) we need<BR>
-to enable the SPI interface on the Raspberry, to do this<BR>
-we type in the following command:$sudo raspi-config<BR>
-Select: 5 (use arrow keys). Interfacing options” hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig.png" width="250">	
-Select P4 SPI and hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig2.png" width="250">
-Use Tab to select <Yes> and hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig3.png" width="250"> 
-The PSI interface is now enabled, hit OK|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig4.png" width="250">	 
+After this is done (can take a couple of minutes) we need<BR>to enable the SPI interface on the Raspberry, to do this<BR>we type in the following command:$sudo raspi-config<BR>Select: 5 (use arrow keys). Interfacing options” hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig.png" width="250">	
+Select P4 SPI and hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig 2.png" width="250">
+Use Tab to select <Yes> and hit enter|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig 3.png" width="250"> 
+The PSI interface is now enabled, hit OK|<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig 4.png" width="250">	 
 Use Tab to select <Finish> and exit raspi-config||<img src="https://github.com/city028/AD9833/blob/master/Source/pics/raspiconfig5.png" width="250">	 
 
 Now that the Raspberry Pi has been “Updated” and “Upgraded” and the SPI interface is now enabled we can focus on installing Python3, PIP3 and SPIDEV (the library I use to use the SPI interface in Python).

@@ -22,7 +22,7 @@ AD9833 Module|AD9833 with Amplification Module
 
 ## Raspberry Pi Header Pin-out
 
-Let us first take a look at the raspberry Pi GPIO Header Pin-out below from element14.com
+Let us first take a look at the raspberry Pi GPIO Header Pin-Out below from element14.com
 
 <img src="https://github.com/city028/AD9833/blob/master/Source/pics/Pi-header2.png" width="500">
  
@@ -477,3 +477,6 @@ So, in summary, although some math is required to calculate the frequency word t
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5ODEyNTI3MjNdfQ==
+-->

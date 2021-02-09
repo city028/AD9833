@@ -429,8 +429,8 @@ Device = 1 = SPI_CE1_N = PIN 26 = GPIO07<BR>
 `spi.max_speed_hz=500000`
 
 The command above sets the clock speed which is used between the Raspberry PI and the SPI slave devices, I have not played with this, please let me know your thoughts.
-
-Note: See my above remark about setting the mode of the SPI, the AD9833 seems to work great without speficying the mode when connected to SPI0, however when connecting to another SPI bus you might need to set the mode according to the specs of the device.
+<BR><U>
+Note: See my above remark about setting the mode of the SPI, the AD9833 seems to work great without specifying the mode when connected to SPI0, however when connecting to another SPI bus you might need to set the mode according to the specs of the device.</U><BR>
 
 
 The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB. After this the spidev procedure “spi.xfer()” is used to send the two bytes, MSB first followed by LSB) and finally the input is printed so that you at least see some output on your screen.

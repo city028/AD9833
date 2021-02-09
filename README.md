@@ -414,23 +414,24 @@ And open up communications
 
 `spi.open(0,0)`
 
-SPIDEV supports 2 SPI busses and each with 2 devices (as far as I know)
+SPIDEV supports 2 SPI busses and each with 2 devices (The Raspbery PI 4 supports more than 2)
 
 The syntax for the command is:
 
 `spi.open(bus,device)`
 
-We only have one bus on the Raspberry, so BUS = 0
+In this case we are using SPI0, so BUS = 0 and we have connected the AD9833 to CS0 so device = 0
 
 We can connect two devices:<BR>
 Device = 0 = SPI_CE0_N = PIN 24 = GPIO08<BR>
 Device = 1 = SPI_CE1_N = PIN 26 = GPIO07<BR>
 
-So, with the command above we’ll select Bus 0 and Device 0
-
 `spi.max_speed_hz=500000`
 
 The command above sets the clock speed which is used between the Raspberry PI and the SPI slave devices, I have not played with this, please let me know your thoughts.
+
+Note: See my above remark about setting the mode of the SPI, the AD9833 seems to work great without speficying the mode when connected to SPI0, however when connecting to another SPI bus you might need to set the mode according to the specs of the device.
+
 
 The only bit of “fancy” programming here is to break up the word we want to write to the AD9833 into to bytes being the MSB (Byte this case, 8 bits) and LSB (8 bits), you can see that a bit shift of 8 bits is used to determine the MSB and an AND against 0xff is used to determine the LSB. After this the spidev procedure “spi.xfer()” is used to send the two bytes, MSB first followed by LSB) and finally the input is printed so that you at least see some output on your screen.
 

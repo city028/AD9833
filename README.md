@@ -455,7 +455,9 @@ send_data(0x4001) # Write MSB = 0x0001 to FREQ0
 send_data(0x0000) # Select the LSB Register
 send_data(0x60f0)  # Write LSB = 0x20F0 to FREQ0
 
-send_data(0x0028) # Blockwave output
+#send_data(0x0008) # Sine
+send_data(0x0028) # Block
+#send_data(0x000A) # Sawtooth
 ```
 
 
@@ -481,7 +483,9 @@ send_data(0x4001) # Write MSB = 0x0001 to FREQ0
 send_data(0x0000) # Select the LSB Register
 send_data(0x60f0)  # Write LSB = 0x20F0 to FREQ0
 
-send_data(0x0028) # Blockwave output
+#send_data(0x0008) # Sine
+send_data(0x0028) # Block
+#send_data(0x000A) # Sawtooth
 ```
 
 
@@ -494,6 +498,8 @@ If all goes well you would see a 2300hz blockwave on your oscilloscope.
 <img src="https://github.com/city028/AD9833/blob/master/Source/pics/scope1.png" width="500">  
 
 Please check out the Source directory for more examples.
+
+By changing the last rows of code you can select a Sine, Block or Sawtooth output, be aware when you select sinewave your voltage will drop (hence the module with the amplifier)
 
 # Testing
 

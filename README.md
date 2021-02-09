@@ -160,7 +160,7 @@ SPI1 – MOSI = pin 38 (GPIO20)<BR>
 SPI1 – CLK = pin 40 (GPIO21)<BR>
 SPI1 – CS0 = pin 12 (GPIO18)<BR>
 <BR>
-the following CS's are available:
+the following CS's are available:<BR><BR>
 SPI1 – CS1 = pin 11 (GPIO17)<BR>
 SPI1 – CS2 = pin 36 (GPIO16)<BR>
 <BR>

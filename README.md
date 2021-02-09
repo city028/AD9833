@@ -66,13 +66,13 @@ So, for the regular AD9833 module we’ll get the following connection table
 			<td colspan=3><B>Raspberry Pi</B></td><td colspan=2><B>AD9833 Module</B></td>
 		</tr>
 		<tr>
-			<td>19</td><td>GPIO10 </td><td>SPI_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
+			<td>19</td><td>GPIO10 </td><td>SPI0_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
 		</tr>
 		<tr>
-			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
+			<td>23</td><td>GPIO11 </td><td>SPI0_CLK   </td><td>CLK </td><td>Clock</td>
 		</tr>
 		<tr>
-			<td>24</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FNC </td><td>FNC = Chip select = FSYNC0 = SSO = Device 0</td>
+			<td>24</td><td>GPIO08 </td><td>SPI0_CE0_N </td><td>FNC </td><td>FNC = Chip select = FSYNC0 = SSO = Device 0</td>
 		</tr>
 		<tr>
 			<td>02</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>
@@ -89,8 +89,8 @@ Note: The Raspberry PI has two pins which are used for selecting the chip (Chip 
 
 PIN|GPIO|Description
 ---|---|---
-24|GPIO08|SPI_CE0_N 
-26|GPIO07|SPI_CE1_N 
+24|GPIO08|SPI0_CE0_N 
+26|GPIO07|SPI0_CE1_N 
 
 So, with the Raspberry Pi we can drive 2 different SPI slaves using the same SPI bus (e.g. Slave 1 and slave 2 above)
 
@@ -109,16 +109,16 @@ For the AD9833 module with amplification we get to the following connection tabl
 			<td colspan=3><B>Raspberry Pi</B></td><td colspan=2><B>AD9833 Module with Amplification</B></td>
 		</tr>
 		<tr>
-			<td>19</td><td>GPIO10 </td><td>SPI_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
+			<td>19</td><td>GPIO10 </td><td>SPI0_MOSI  </td><td>DAT </td><td>MOSI = Data = Receive data from Master</td>
 		</tr>
 		<tr>
-			<td>23</td><td>GPIO11 </td><td>SPI_CLK   </td><td>CLK </td><td>Clock</td>
+			<td>23</td><td>GPIO11 </td><td>SPI0_CLK   </td><td>CLK </td><td>Clock</td>
 		</tr>
 		<tr>
-			<td>24</td><td>GPIO08 </td><td>SPI_CE0_N </td><td>FSY </td><td>FSY = Chip select = AD9833</td>
+			<td>24</td><td>GPIO08 </td><td>SPI0_CE0_N </td><td>FSY </td><td>FSY = Chip select = AD9833</td>
 		</tr>
 				<tr>
-			<td>26</td><td>GPIO07 </td><td>SPI_CE1_N </td><td>CS </td><td>CS = Chip select = MCP41010 digital resistor</td>
+			<td>26</td><td>GPIO07 </td><td>SPI0_CE1_N </td><td>CS </td><td>CS = Chip select = MCP41010 digital resistor</td>
 		</tr>
 		<tr>
 			<td>02</td><td>+5v    </td><td>VCC       </td><td>VCC </td><td>VCC</td>
@@ -160,9 +160,37 @@ SPI1 – MOSI = pin 38 (GPIO20)
 SPI1 – CLK = pin 40 (GPIO21)
 SPI1 – CS0 = pin 12 (GPIO18)
 
-the followin CS's are available:
+the following CS's are available:
 SPI1 – CS1 = pin 11 (GPIO17)
 SPI1 – CS2 = pin 36 (GPIO16)
+
+So, with this I thought it would work.....wrong!
+
+It turns out that the SPI1 interface is working a bit differently than SPI0, after a lot of reading and trying I found out that the mode for SPI1 probaby is not set to the same mode as SPI0.
+
+After I added the following to my Python script I got a proper output from the AD9833:
+
+spi.mode = 0b10 #binary value for 2 = mode 2
+
+Mode|POL|PHA
+---|---|---
+0|0|0 
+1|0|1
+2|1|0
+3|1|1
+
+
+
+
+
+
+Credit: https://www.digikey.be/nl/articles/why-how-to-use-serial-peripheral-interface-simplify-connections-between-multiple-devices
+
+
+
+
+
+
 
 
 ## AD9833 Module wire diagram

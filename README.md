@@ -131,6 +131,40 @@ For the AD9833 module with amplification we get to the following connection tabl
 </table>
 
 
+
+## UPDATE: 9/Feb/2021: Using SPI 1 on the raspberry PI
+It took me a lot of experiementing and reading but I finally figured out why SPI1 did not work for me.
+
+First off, SPI 1 is disabled by default in the PI, you will need to edit your /boot/config.txt file and ensure it contains the following:
+
+dtparam=spi=on        # this is ensure SPI0 is on, which is the output of using RASPI-CONFIG
+dtoverlay=spi1-3cs    # adding this will enable SPI 1 with 3 chip select lines
+
+Reboot and check if the devices are enabled
+
+$ls -als /dev/spi*
+
+Should show somethig like:
+
+0 crw-rw---- 1 root spi 153, 0 Feb  9 01:18 /dev/spidev0.0
+0 crw-rw---- 1 root spi 153, 1 Feb  9 01:18 /dev/spidev0.1
+0 crw-rw---- 1 root spi 153, 4 Feb  9 01:18 /dev/spidev1.0
+0 crw-rw---- 1 root spi 153, 3 Feb  9 01:18 /dev/spidev1.1
+0 crw-rw---- 1 root spi 153, 2 Feb  9 01:18 /dev/spidev1.2
+
+There are two more overlays for SPI1, spi1-1cs (using 1 chipselect) and spi1-2cs (using 2 chipselect), choose depending on your needs    
+
+This is the pin-out required for the AD9833 module
+
+SPI1 – MOSI = pin 38 (GPIO20)
+SPI1 – CLK = pin 40 (GPIO21)
+SPI1 – CS0 = pin 12 (GPIO18)
+
+the followin CS's are available:
+SPI1 – CS1 = pin 11 (GPIO17)
+SPI1 – CS2 = pin 36 (GPIO16)
+
+
 ## AD9833 Module wire diagram
 
 Coming Soon!

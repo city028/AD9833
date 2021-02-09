@@ -144,34 +144,34 @@ Reboot and check if the devices are enabled
 
 $ls -als /dev/spi*
 
-Should show somethig like:
+Should show something like:
 <BR><BR>
 0 crw-rw---- 1 root spi 153, 0 Feb  9 01:18 /dev/spidev0.0<BR>
 0 crw-rw---- 1 root spi 153, 1 Feb  9 01:18 /dev/spidev0.1<BR>
 0 crw-rw---- 1 root spi 153, 4 Feb  9 01:18 /dev/spidev1.0<BR>
 0 crw-rw---- 1 root spi 153, 3 Feb  9 01:18 /dev/spidev1.1<BR>
 0 crw-rw---- 1 root spi 153, 2 Feb  9 01:18 /dev/spidev1.2<BR>
-<BR><BR>
+
 There are two more overlays for SPI1, spi1-1cs (using 1 chipselect) and spi1-2cs (using 2 chipselect), choose depending on your needs    
-<BR><BR>
+
 This is the pin-out required for the AD9833 module
 <BR><BR>
-SPI1 – MOSI = pin 38 (GPIO20)
-SPI1 – CLK = pin 40 (GPIO21)
-SPI1 – CS0 = pin 12 (GPIO18)
+SPI1 – MOSI = pin 38 (GPIO20)<BR>
+SPI1 – CLK = pin 40 (GPIO21)<BR>
+SPI1 – CS0 = pin 12 (GPIO18)<BR>
 <BR>
 the following CS's are available:
-SPI1 – CS1 = pin 11 (GPIO17)
-SPI1 – CS2 = pin 36 (GPIO16)
+SPI1 – CS1 = pin 11 (GPIO17)<BR>
+SPI1 – CS2 = pin 36 (GPIO16)<BR>
 <BR>
 So, with this I thought it would work.....wrong!
-
+<BR>
 It turns out that the SPI1 interface is working a bit differently than SPI0, after a lot of reading and trying I found out that the mode for SPI1 probaby is not set to the same mode as SPI0.
 <BR>
 After I added the following to my Python script I got a proper output from the AD9833:
-
+<BR>
 spi.mode = 0b10 #binary value for 2 = mode 2
-
+<BR>
 Mode|POL|PHA
 ---|---|---
 0|0|0 
@@ -179,12 +179,9 @@ Mode|POL|PHA
 2|1|0
 3|1|1
 
-
+<BR>
 <img src="https://github.com/city028/AD9833/blob/master/Source/pics/SPI Modes.jpeg" width="250"> 
-
-
-
-
+<BR>
 Credit: https://www.digikey.be/nl/articles/why-how-to-use-serial-peripheral-interface-simplify-connections-between-multiple-devices
 
 

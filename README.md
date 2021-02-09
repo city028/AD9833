@@ -180,7 +180,7 @@ Mode|POL|PHA
 3|1|1
 
 <BR>
-<img src="https://github.com/city028/AD9833/blob/master/Source/pics/SPI%20Modes.jpg" width="250"> 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/SPI%20Modes.jpg" width="500"> 
 <BR>
 Credit: https://www.digikey.be/nl/articles/why-how-to-use-serial-peripheral-interface-simplify-connections-between-multiple-devices
 <BR>

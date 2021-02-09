@@ -136,9 +136,9 @@ For the AD9833 module with amplification we get to the following connection tabl
 It took me a lot of experiementing and reading but I finally figured out why SPI1 did not work for me.
 
 First off, SPI 1 is disabled by default in the PI, you will need to edit your /boot/config.txt file and ensure it contains the following:
-
-dtparam=spi=on        # this is ensure SPI0 is on, which is the output of using RASPI-CONFIG
-dtoverlay=spi1-3cs    # adding this will enable SPI 1 with 3 chip select lines
+<BR>
+dtparam=spi=on        # this is ensure SPI0 is on, which is the output of using RASPI-CONFIG<BR>
+dtoverlay=spi1-3cs    # adding this will enable SPI 1 with 3 chip select lines<BR>
 
 Reboot and check if the devices are enabled
 

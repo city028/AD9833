@@ -537,6 +537,7 @@ So, in summary, although some math is required to calculate the frequency word t
 9|Install PIP|https://www.raspberrypi.org/documentation/linux/software/python.md
 10|Binary to hex converter|https://www.rapidtables.com/convert/number/binary-to-hex.html
 11|AD9833 application notes|https://www.analog.com/media/en/technical-documentation/application-notes/AN-1070.pdf
+12|SPI Modes|https://www.digikey.be/nl/articles/why-how-to-use-serial-peripheral-interface-simplify-connections-between-multiple-devices
 
 
 

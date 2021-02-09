@@ -136,7 +136,7 @@ For the AD9833 module with amplification we get to the following connection tabl
 It took me a lot of experiementing and reading but I finally figured out why SPI1 did not work for me.
 
 First off, SPI 1 is disabled by default in the PI, you will need to edit your /boot/config.txt file and ensure it contains the following:
-<BR>
+<BR><BR>
 dtparam=spi=on        # this is ensure SPI0 is on, which is the output of using RASPI-CONFIG<BR>
 dtoverlay=spi1-3cs    # adding this will enable SPI 1 with 3 chip select lines<BR>
 
@@ -145,29 +145,29 @@ Reboot and check if the devices are enabled
 $ls -als /dev/spi*
 
 Should show somethig like:
-
-0 crw-rw---- 1 root spi 153, 0 Feb  9 01:18 /dev/spidev0.0
-0 crw-rw---- 1 root spi 153, 1 Feb  9 01:18 /dev/spidev0.1
-0 crw-rw---- 1 root spi 153, 4 Feb  9 01:18 /dev/spidev1.0
-0 crw-rw---- 1 root spi 153, 3 Feb  9 01:18 /dev/spidev1.1
-0 crw-rw---- 1 root spi 153, 2 Feb  9 01:18 /dev/spidev1.2
-
+<BR><BR>
+0 crw-rw---- 1 root spi 153, 0 Feb  9 01:18 /dev/spidev0.0<BR>
+0 crw-rw---- 1 root spi 153, 1 Feb  9 01:18 /dev/spidev0.1<BR>
+0 crw-rw---- 1 root spi 153, 4 Feb  9 01:18 /dev/spidev1.0<BR>
+0 crw-rw---- 1 root spi 153, 3 Feb  9 01:18 /dev/spidev1.1<BR>
+0 crw-rw---- 1 root spi 153, 2 Feb  9 01:18 /dev/spidev1.2<BR>
+<BR><BR>
 There are two more overlays for SPI1, spi1-1cs (using 1 chipselect) and spi1-2cs (using 2 chipselect), choose depending on your needs    
-
+<BR><BR>
 This is the pin-out required for the AD9833 module
-
+<BR><BR>
 SPI1 – MOSI = pin 38 (GPIO20)
 SPI1 – CLK = pin 40 (GPIO21)
 SPI1 – CS0 = pin 12 (GPIO18)
-
+<BR>
 the following CS's are available:
 SPI1 – CS1 = pin 11 (GPIO17)
 SPI1 – CS2 = pin 36 (GPIO16)
-
+<BR>
 So, with this I thought it would work.....wrong!
 
 It turns out that the SPI1 interface is working a bit differently than SPI0, after a lot of reading and trying I found out that the mode for SPI1 probaby is not set to the same mode as SPI0.
-
+<BR>
 After I added the following to my Python script I got a proper output from the AD9833:
 
 spi.mode = 0b10 #binary value for 2 = mode 2

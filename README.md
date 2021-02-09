@@ -180,6 +180,7 @@ Mode|POL|PHA
 3|1|1
 
 
+<img src="https://github.com/city028/AD9833/blob/master/Source/pics/SPI Modes.jpeg" width="250"> 
 
 
 

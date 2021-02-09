@@ -29,7 +29,7 @@ Let us first take a look at the raspberry Pi GPIO Header Pin-Out below from elem
 
 ## SPI Bus
 
-The Raspberry Pi is provided with an SPI bus which can be used for a serial connection between the Raspberry Pi and other devices.
+The Raspberry Pi is provided with an SPI bus (2 in fact, below I will focus on SPI0 but there is an interesting note below you might want to read if you are using SPI1) which can be used for a serial connection between the Raspberry Pi and other devices.
 
 The AD9833 modules are using an SPI bus as well to receive data from the SPI master so that they can be configured to create e.g. a sinewave at 1Khz. So, if we identify the SPI pins on the Raspberry Pi header we get the following table:
 

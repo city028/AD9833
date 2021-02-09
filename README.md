@@ -35,11 +35,11 @@ The AD9833 modules are using an SPI bus as well to receive data from the SPI mas
 
 PIN|GPIO|Description
 ---|---|---
-19|GPIO10|SPI_MOSI
-21|GPIO09|SPI_MISO
-23|GPIO11|SPI_CLK
-24|GPIO08|SPI_CE0_N
-26|GPIO07|SPI_CE1_N
+19|GPIO10|SPI0_MOSI
+21|GPIO09|SPI0_MISO
+23|GPIO11|SPI0_CLK
+24|GPIO08|SPI0_CE0_N
+26|GPIO07|SPI0_CE1_N
 
 The below diagram explains how the SPI bus needs to be wired up:
 
